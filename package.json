@@ -1,0 +1,19 @@
+{
+  "name": "training-reactjs",
+  "version": "1.0.0",
+  "description": "Basically here I put all initial information regarding the Reactjs world. Links, papers, examples and mainly CODE :) <br/>\r [wiki section](https://github.com/kilisoria/training-reactjs/wiki).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kilisoria/training-reactjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kilisoria/training-reactjs/issues"
+  },
+  "homepage": "https://github.com/kilisoria/training-reactjs#readme"
+}
