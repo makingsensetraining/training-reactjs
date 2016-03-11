@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <title>Books</title>
+          <link rel="stylesheet" href="css/base.css" />
+    </head>
+    <body>
+      <h1>React - Using Vanilla</h1>
+      <div id="container">
+        <!-- This element's contents will be replaced with your component. -->
+      </div>
+      <p>
+      </p>
+        <script src="build/react.js"></script>
+        <script src="build/react-dom.js"></script>
+
+        <script type="text/javascript">
+
+        var Hello = React.createClass({
+            displayName: 'Hello',
+            render: function() {
+              return React.createElement("div", null, "Hello ", this.props.name);
+            }
+        });
+
+        ReactDOM.render(
+            React.createElement(Hello, {name: "Guys!"}),
+            document.getElementById('container')
+        );
+
+        </script>
+    </body>
+</html>
