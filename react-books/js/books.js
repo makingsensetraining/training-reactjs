@@ -1,3 +1,4 @@
+// Child
 var BookForm = React.createClass({
     propTypes: {
       onBook: React.PropTypes.func.isRequired
@@ -48,44 +49,7 @@ var BookForm = React.createClass({
     }
 });
 
-var Books = React.createClass({
-    propTypes: {
-      books: React.PropTypes.array
-    },
-    getInitialState() {
-      return {
-        books: (this.props.books || [])
-      };
-    },
-    onBook(book) {
-      this.state.books.push(book);
-
-      this.setState({
-        books: this.state.books
-      });
-    },
-    render() {
-      var books = this.state.books.map(function(book) {
-        return <Book key={book.title} title={book.title} read={book.read}></Book>;
-      });
-
-      return (
-        <div>
-          <BookForm onBook={this.onBook}></BookForm>
-          <table className={"book-table"}>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Read</th>
-              </tr>
-            </thead>
-            <tbody>{books}</tbody>
-          </table>
-        </div>
-      );
-    }
-});
-
+// Child
 var Book = React.createClass({
     propTypes: {
       title: React.PropTypes.string.isRequired,
@@ -108,6 +72,45 @@ var Book = React.createClass({
           <td>{this.props.title}</td>
           <td><input type='checkbox' checked={this.state.read} onChange={this.handleChange} /></td>
         </tr>
+      );
+    }
+});
+
+// Parent
+var Books = React.createClass({
+    propTypes: {
+      books: React.PropTypes.array
+    },
+    getInitialState() {
+      return {
+        books: (this.props.books || [])
+      };
+    },
+    onBook(book) {
+      this.state.books.push(book);
+
+      this.setState({
+        books: this.state.books
+      });
+    },
+    render() {      
+      var books = this.state.books.map(function(book) {
+        return <Book key={book.title} title={book.title} read={book.read}></Book>;
+      });
+
+      return (
+        <div>
+          <BookForm onBook={this.onBook}></BookForm>
+          <table className={"book-table"}>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Read</th>
+              </tr>
+            </thead>
+            <tbody>{books}</tbody>
+          </table>
+        </div>
       );
     }
 });
