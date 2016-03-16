@@ -6,7 +6,7 @@ var Loader = require('./Loader.react.js');
 var NotificationBar = require('./NotificationBar.react.js');
 
 // Export the TweetsApp component
-module.exports = TweetsApp = React.createClass({
+var TweetsApp = React.createClass({
 
   // Method to add a tweet to our timeline
   addTweet: function(tweet){
@@ -182,3 +182,6 @@ module.exports = TweetsApp = React.createClass({
   }
 
 });
+
+
+module.exports = TweetsApp;

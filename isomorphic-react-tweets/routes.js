@@ -5,6 +5,7 @@ var JSX = require('node-jsx').install(),
 
 module.exports = {
 
+  // home
   index: function(req, res) {
     // Call static model method to get tweets in the db
     Tweet.getTweets(0,0, function(tweets, pages) {
